@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: examprojectlse
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn --chdir app app:server"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
